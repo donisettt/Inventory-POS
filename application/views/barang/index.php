@@ -58,7 +58,7 @@
                                     $class = '';
                                     if ($hasil <= 0) {
                                         $class = 'badge badge-danger';
-                                    } elseif ($hasil < 10) {
+                                    } elseif ($hasil <= 5) {
                                         $class = 'badge badge-warning';
                                     } else {
                                         $class = 'badge badge-success';
