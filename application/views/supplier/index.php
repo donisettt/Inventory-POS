@@ -35,7 +35,7 @@
                             <?php $no=1; foreach ($supplier as $s) { ?>
                             <tr>
                                 <td><?= $no++ ?>.</td>
-                                <td><?= $s->id_supplier ?></td>
+                                <td><span class="badge badge-success"><?= $s->id_supplier ?></span></td>
                                 <td><?= $s->nama_supplier ?></td>
                                 <td><?= $s->notelp ?></td>
                                 <td><?= $s->alamat ?></td>

@@ -46,16 +46,27 @@
                                 <td onclick="detail('<?= $b->id_barang ?>')"><?= $b->nama_barang ?></td>
                                 <td onclick="detail('<?= $b->id_barang ?>')"><?= $b->nama_jenis ?></td>
                                 <td onclick="detail('<?= $b->id_barang ?>')">
-                                    <?php  
+                                    <?php
                                     $data = $this->db->select_sum('jumlah_masuk')->from('barang_masuk')->where('id_barang', $b->id_barang)->get();
                                     $data2 = $this->db->select_sum('jumlah_keluar')->from('barang_keluar')->where('id_barang', $b->id_barang)->get();
-                                
 
                                     $bm = $data->row();
                                     $bk = $data2->row();
                                     $hasil = intval($b->stok) + (intval($bm->jumlah_masuk) - intval($bk->jumlah_keluar));
+
+                                    // Validasi warna berdasarkan stok
+                                    $class = '';
+                                    if ($hasil <= 0) {
+                                        $class = 'badge badge-danger';
+                                    } elseif ($hasil < 10) {
+                                        $class = 'badge badge-warning';
+                                    } else {
+                                        $class = 'badge badge-success';
+                                    }
                                     ?>
-                                    <?= $hasil ?>
+                                    <span class="<?= $class ?>">
+                                        <?= $hasil ?>
+                                    </span>
                                 </td>
                                 <td onclick="detail('<?= $b->id_barang ?>')"><?= $b->nama_satuan ?></td>
                                 <td onclick="detail('<?= $b->id_barang ?>')"><?= $b->harga_beli ?></td>

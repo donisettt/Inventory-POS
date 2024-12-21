@@ -60,7 +60,7 @@ function tgl_indo($tanggal){
                             <?php $no=1; foreach ($bk as $bk): ?>
                             <tr>
                                 <td><?= $no++ ?>.</td>
-                                <td><?= $bk->id_barang_keluar ?></td>
+                                <td><span class="badge badge-success"><?= $bk->id_barang_keluar ?></span></td>
                                 <td><?= tgl_indo($bk->tgl_keluar) ?></td>
                                 <td><?= $bk->nama_customer ?></td>
                                 <td><?= $bk->nama_barang ?></td>
