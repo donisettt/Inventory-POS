@@ -4,13 +4,13 @@ function validateForm() {
     var alamat = document.forms["myForm"]["alamat"].value;
 
     if (supplier == "") {
-        validasi('Nama Supplier wajib di isi!', 'warning');
+        validasi('Nama Supplier tidak boleh kosong!', 'warning');
         return false;
     } else if (notelp == "") {
-        validasi('Nomor Telepon wajib di isi!', 'warning');
+        validasi('Nomor Telepon tidak boleh kosong!', 'warning');
         return false;
     } else if (alamat == "") {
-        validasi('Alamat wajib di isi!', 'warning');
+        validasi('Alamat tidak boleh kosong!', 'warning');
         return false;
     }
 
@@ -22,13 +22,13 @@ function validateFormUpdate() {
     var alamat = document.forms["myFormUpdate"]["alamat"].value;
 
     if (supplier == "") {
-        validasi('Nama Supplier wajib di isi!', 'warning');
+        validasi('Nama Supplier tidak boleh kosong!', 'warning');
         return false;
     } else if (notelp == "") {
-        validasi('Nomor Telepon wajib di isi!', 'warning');
+        validasi('Nomor Telepon tidak boleh kosong!', 'warning');
         return false;
     } else if (alamat == "") {
-        validasi('Alamat wajib di isi!', 'warning');
+        validasi('Alamat tidak boleh kosong!', 'warning');
         return false;
     }
 

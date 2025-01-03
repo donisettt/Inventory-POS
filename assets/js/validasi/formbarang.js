@@ -5,16 +5,16 @@ function validateForm() {
     var satuan = document.forms["myForm"]["satuan"].value;
 
     if (barang == "") {
-        validasi('Nama Barang wajib di isi!', 'warning');
+        validasi('Nama Barang tidak boleh kosong!', 'warning');
         return false;
     } else if (stok == '') {
-        validasi('Stok wajib di isi!', 'warning');
+        validasi('Stok tidak boleh kosong!', 'warning');
         return false;
     } else if (jenis == '') {
-        validasi('Jenis Barang wajib di isi!', 'warning');
+        validasi('Jenis Barang tidak boleh kosong!', 'warning');
         return false;
     } else if (satuan == '') {
-        validasi('Satuan Barang wajib di isi!', 'warning');
+        validasi('Satuan Barang tidak boleh kosong!', 'warning');
         return false;
     }
 

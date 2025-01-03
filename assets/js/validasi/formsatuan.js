@@ -2,7 +2,7 @@ function validateForm() {
     var satuan = document.forms["myForm"]["satuan"].value;
 
     if (satuan == "") {
-        validasi('Nama Satuan wajib di isi!', 'warning');
+        validasi('Nama Satuan tidak boleh kosong!', 'warning');
         return false;
     }
 

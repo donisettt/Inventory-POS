@@ -10,7 +10,13 @@ Salma Rostika Nurajni - 23552011358 (Database Designer)
 Ariyan Kusharthanto - 23552011168 (Data Entry)
 Indri Rohmawati - 23552011137 (Data Entry)
 
-Framework : Codeigniter 3.1.11
-CSS Template : SB Admin 2
+SI-IVEN MARDONI JAYA
 
+Aplikasi inventaris Gudang Dengan Penerapan Rancangan Metode Scrum
 
+Bahasa Pemrograman : PHP, JavaScript
+Framework : CodeIgniter 3, Sb Admin 2
+Database : MySQL
+Code Editor : Visual Studio Code
+Server Lokal : XAMPP
+Desain Mockup : Balsamiq, Canva

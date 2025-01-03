@@ -8,20 +8,20 @@ function validateForm() {
     var kpwd = document.forms["myForm"]["kpwd"].value;
 
     if (namaL == "") {
-        validasi('Nama Lengkap wajib di isi!', 'warning');
+        validasi('Nama Lengkap tidak boleh kosong!', 'warning');
         return false;
     } else if (user == '') {
-        validasi('Username wajib di isi!', 'warning');
+        validasi('Username tidak boleh kosong!', 'warning');
         return false;
     } else if (notelp == '') {
-        validasi('Nomor Telepon wajib di isi!', 'warning');
+        validasi('Nomor Telepon tidak boleh kosong!', 'warning');
         return false;
     } 
     else if (email == '') {
-        validasi('Email wajib di isi!', 'warning');
+        validasi('Email tidak boleh kosong!', 'warning');
         return false;
     } else if (level == '') {
-        validasi('Level wajib di isi!', 'warning');
+        validasi('Level tidak boleh kosong!', 'warning');
         return false;
     } else if (pwd !== '' || kpwd !== '') {
 

@@ -9,7 +9,7 @@ function filter() {
     if (tglawal != '' && tglakhir != '') {
         filterBm(tglawal, tglakhir);
     } else {
-        validasi("Tanggal Filter wajib di isi!", "warning");
+        validasi("Tanggal Filter tidak boleh kosong!", "warning");
     }
 }
 

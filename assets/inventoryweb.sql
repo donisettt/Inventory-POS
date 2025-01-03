@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Des 2024 pada 06.19
--- Versi server: 10.1.32-MariaDB
--- Versi PHP: 7.2.5
+-- Generation Time: Jan 03, 2025 at 05:49 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barang`
+-- Table structure for table `barang`
 --
 
 CREATE TABLE `barang` (
@@ -40,18 +40,18 @@ CREATE TABLE `barang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `barang`
+-- Dumping data for table `barang`
 --
 
 INSERT INTO `barang` (`id_barang`, `nama_barang`, `stok`, `id_satuan`, `id_jenis`, `foto`, `harga_beli`, `harga_jual`) VALUES
 ('MDN-BRG-0001', 'Teh Gelas 1 Dus', '10', 6, 1, 'R.jpg', 17000, 19000),
-('MDN-BRG-0002', 'Rokok Gudang Garam Filter', '0', 5, 4, '1224c564-c026-47f8-a45a-ef3b278b4e23.jpg', 515000, 550000),
+('MDN-BRG-0002', 'Rokok Gudang Garam Filter', '2', 5, 4, '1224c564-c026-47f8-a45a-ef3b278b4e23.jpg', 515000, 550000),
 ('MDN-BRG-0003', 'Aqua Air Mineral 600ml 1 Karton 24 Botol X 600 Ml', '0', 6, 1, '204e4e14-30a3-4eac-a099-f60848d3a623.jpg', 55000, 60000);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barang_keluar`
+-- Table structure for table `barang_keluar`
 --
 
 CREATE TABLE `barang_keluar` (
@@ -64,16 +64,17 @@ CREATE TABLE `barang_keluar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `barang_keluar`
+-- Dumping data for table `barang_keluar`
 --
 
 INSERT INTO `barang_keluar` (`id_barang_keluar`, `id_customer`, `id_barang`, `id_user`, `jumlah_keluar`, `tgl_keluar`) VALUES
-('MDN-BK-0001', 'MDN-CUS001', 'MDN-BRG-0002', 'USR-001', '2', '2024-12-21');
+('MDN-BK-0001', 'MDN-CUS-0002', 'MDN-BRG-0002', 'USR-001', '3', '2025-01-03'),
+('MDN-BK-0002', 'MDN-CUS-0001', 'MDN-BRG-0002', 'USR-001', '2', '2025-01-03');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barang_masuk`
+-- Table structure for table `barang_masuk`
 --
 
 CREATE TABLE `barang_masuk` (
@@ -86,38 +87,37 @@ CREATE TABLE `barang_masuk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `barang_masuk`
+-- Dumping data for table `barang_masuk`
 --
 
 INSERT INTO `barang_masuk` (`id_barang_masuk`, `id_supplier`, `id_barang`, `id_user`, `jumlah_masuk`, `tgl_masuk`) VALUES
-('MDN-BM-0001', 'MDN-SUP001', 'MDN-BRG-0002', 'USR-001', 10, '2024-12-21'),
-('MDN-BM-0002', 'MDN-SUP001', 'MDN-BRG-0001', 'USR-001', 10, '2024-12-21'),
-('MDN-BM-0003', 'MDN-SUP001', 'MDN-BRG-0003', 'USR-002', 10, '2024-12-21');
+('MDN-BM-0001', 'MDN-SUP-0002', 'MDN-BRG-0002', 'USR-001', 10, '2025-01-03');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `customer`
+-- Table structure for table `customer`
 --
 
 CREATE TABLE `customer` (
-  `id_customer` varchar(10) NOT NULL,
+  `id_customer` varchar(15) NOT NULL,
   `nama_customer` varchar(60) DEFAULT NULL,
   `notelp` varchar(15) DEFAULT NULL,
   `alamat` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `customer`
+-- Dumping data for table `customer`
 --
 
 INSERT INTO `customer` (`id_customer`, `nama_customer`, `notelp`, `alamat`) VALUES
-('MDN-CUS001', 'CV Babon Sejati', '0877657898', 'Kp Sukarandeg Pagaden Subang');
+('MDN-CUS-0001', 'CV. Mulia Sejahtera', '087865647832', 'Sukarandeg, Subang'),
+('MDN-CUS-0002', 'CV. Alfin Maju Bersama', '085217208593', 'Sukajadi, Bandung 41287');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jenis`
+-- Table structure for table `jenis`
 --
 
 CREATE TABLE `jenis` (
@@ -127,7 +127,7 @@ CREATE TABLE `jenis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `jenis`
+-- Dumping data for table `jenis`
 --
 
 INSERT INTO `jenis` (`id_jenis`, `nama_jenis`, `ket`) VALUES
@@ -138,7 +138,7 @@ INSERT INTO `jenis` (`id_jenis`, `nama_jenis`, `ket`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `satuan`
+-- Table structure for table `satuan`
 --
 
 CREATE TABLE `satuan` (
@@ -148,7 +148,7 @@ CREATE TABLE `satuan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `satuan`
+-- Dumping data for table `satuan`
 --
 
 INSERT INTO `satuan` (`id_satuan`, `nama_satuan`, `ket`) VALUES
@@ -161,27 +161,28 @@ INSERT INTO `satuan` (`id_satuan`, `nama_satuan`, `ket`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `supplier`
+-- Table structure for table `supplier`
 --
 
 CREATE TABLE `supplier` (
-  `id_supplier` varchar(10) NOT NULL,
+  `id_supplier` varchar(15) NOT NULL,
   `nama_supplier` varchar(60) DEFAULT NULL,
   `notelp` varchar(15) DEFAULT NULL,
   `alamat` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `supplier`
+-- Dumping data for table `supplier`
 --
 
 INSERT INTO `supplier` (`id_supplier`, `nama_supplier`, `notelp`, `alamat`) VALUES
-('MDN-SUP001', 'PT Gudang Garam Tbk', '02657748', 'Jl. Jenderal Ahmad Yani, 79, Daerah Khusus Ibukota Jakarta, ID');
+('MDN-SUP-0001', 'PT Wings', '026544352', 'Pagaden, Subang'),
+('MDN-SUP-0002', 'PT Gudang Garam Tbk', '02675435241', 'Jababeka, CIkarang Utara');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -197,78 +198,78 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `nama`, `username`, `email`, `notelp`, `level`, `password`, `foto`, `status`) VALUES
 ('USR-001', 'Admin Gudang', 'admin', 'admin@admin.com', '087856123445', 'admin', '0192023a7bbd73250516f069df18b500', 'doni.jpg', 'Aktif'),
 ('USR-002', 'Staff Gudang', 'gudang', 'gudang@gmail.com', '087817379229', 'gudang', '202446dd1d6028084426867365b0c7a1', 'user.png', 'Aktif'),
-('USR-003', 'Manajer', 'manajer', 'manajer@gmail.com', '089291889228', 'manajer', '69b731ea8f289cf16a192ce78a37b4f0', 'user.png', 'Aktif');
+('USR-003', 'Manajer Ariyan', 'manajer', 'manajer@gmail.com', '089291889228', 'manajer', '69b731ea8f289cf16a192ce78a37b4f0', 'WhatsApp_Image_2024-07-05_at_07_43_37_8327c91d.jpg', 'Aktif');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `barang`
+-- Indexes for table `barang`
 --
 ALTER TABLE `barang`
   ADD PRIMARY KEY (`id_barang`);
 
 --
--- Indeks untuk tabel `barang_keluar`
+-- Indexes for table `barang_keluar`
 --
 ALTER TABLE `barang_keluar`
   ADD PRIMARY KEY (`id_barang_keluar`);
 
 --
--- Indeks untuk tabel `barang_masuk`
+-- Indexes for table `barang_masuk`
 --
 ALTER TABLE `barang_masuk`
   ADD PRIMARY KEY (`id_barang_masuk`);
 
 --
--- Indeks untuk tabel `customer`
+-- Indexes for table `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`id_customer`);
 
 --
--- Indeks untuk tabel `jenis`
+-- Indexes for table `jenis`
 --
 ALTER TABLE `jenis`
   ADD PRIMARY KEY (`id_jenis`);
 
 --
--- Indeks untuk tabel `satuan`
+-- Indexes for table `satuan`
 --
 ALTER TABLE `satuan`
   ADD PRIMARY KEY (`id_satuan`);
 
 --
--- Indeks untuk tabel `supplier`
+-- Indexes for table `supplier`
 --
 ALTER TABLE `supplier`
   ADD PRIMARY KEY (`id_supplier`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `jenis`
+-- AUTO_INCREMENT for table `jenis`
 --
 ALTER TABLE `jenis`
   MODIFY `id_jenis` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `satuan`
+-- AUTO_INCREMENT for table `satuan`
 --
 ALTER TABLE `satuan`
   MODIFY `id_satuan` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;

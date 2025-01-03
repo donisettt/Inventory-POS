@@ -4,16 +4,16 @@ function validateForm() {
     var supplier = document.forms["myForm"]["supplier"].value;
     var jmlbarang = document.forms["myForm"]["jmlbarang"].value;
     if (tgl == '') {
-        validasi('Tanggal Masuk wajib di isi!', 'warning');
+        validasi('Tanggal Masuk tidak boleh kosong!', 'warning');
         return false;
     } else if (barang == '') {
-        validasi('Barang wajib di isi!', 'warning');
+        validasi('Barang tidak boleh kosong!', 'warning');
         return false;
     } else if (supplier == '') {
-        validasi('Supplier wajib di isi!', 'warning');
+        validasi('Supplier tidak boleh kosong!', 'warning');
         return false;
     } else if (jmlbarang == '') {
-        validasi('Jumlah Masuk wajib di isi!', 'warning');
+        validasi('Jumlah Masuk tidak boleh kosong!', 'warning');
         return false;
     }
 

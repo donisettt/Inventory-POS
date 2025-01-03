@@ -9,7 +9,7 @@ function filter() {
     if (tglawal != '' && tglakhir != '') {
         filterBk(tglawal, tglakhir);
     } else {
-        validasi("Tanggal Filter wajib di isi!", "warning");
+        validasi("Tanggal Filter tidak boleh kosong!", "warning");
     }
 }
 
@@ -53,6 +53,7 @@ function ambilBk() {
             { "data": "id_barang_keluar" },
             { "data": "tgl_keluar" },
             { "data": "id_barang_keluar" },
+            { "data": "nama_customer" },
             { "data": "nama_barang" },
             { "data": "jumlah_keluar" },
         ],

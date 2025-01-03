@@ -59,7 +59,7 @@ class supplier_model extends ci_model{
 		   $kode = 1;
 		  }
 		  $kodemax = str_pad($kode, 4, "0", STR_PAD_LEFT); // angka 4 menunjukkan jumlah digit angka 0
-		  $kodejadi = "SUP".$kodemax;    
+		  $kodejadi = "MDN-SUP-".$kodemax;    
 		  return $kodejadi;
 	}
 

@@ -85,6 +85,7 @@ body{
   <tr>
     <th>No</th>
     <th>No Transaksi</th>
+    <th>Customer</th>
     <th>Tanggal Keluar</th>
     <th>Nama Barang</th>
     <th>Jumlah Keluar</th>
@@ -93,6 +94,7 @@ body{
         <tr>
           <td><?= $no++ ?></td>
           <td><?= $d->id_barang_keluar ?></td>
+          <td><?= $d->nama_customer ?></td>
           <td><?= tgl_indo($d->tgl_keluar) ?></td>
           <td><?= $d->nama_barang ?></td>
           <td><?= $d->jumlah_keluar ?></td>

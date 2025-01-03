@@ -72,6 +72,7 @@
                                 <th width="1%">No</th>
                                 <th>Tanggal Keluar</th>
                                 <th>No.Transaksi</th>
+                                <th>Customer</th>
                                 <th>Nama Barang</th>
                                 <th>Jumlah Keluar</th>
                             </tr>

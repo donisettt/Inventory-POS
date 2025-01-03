@@ -2,7 +2,7 @@ function validateForm() {
     var jenis = document.forms["myForm"]["jenis"].value;
 
     if (jenis == "") {
-        validasi('Nama Jenis wajib di isi!', 'warning');
+        validasi('Nama Jenis tidak boleh kosong!', 'warning');
         return false;
     }
 

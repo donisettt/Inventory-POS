@@ -4,10 +4,10 @@ function proses_login() {
     var pwd = $("[name='pwd']").val();
 
     if (usr == "") {
-        validasi('Username masih kosong!', 'warning');
+        validasi('Username tidak boleh kosong!', 'warning');
         return false;
     } else if (pwd == '') {
-        validasi('Password masih kosong!', 'warning');
+        validasi('Password tidak boleh kosong!', 'warning');
         return false;
     } else {
         cek_user(usr, pwd);
@@ -33,7 +33,7 @@ function cek_user(usr, pwd) {
                 pesan('Berhasil Login!', 'success', 'true');
                 $("#login").text("Login");
             } else {
-                pesan('User & Password salah!', 'error', 'false');
+                pesan('Username atau password salah!', 'error', 'false');
                 $("#login").text("Login");
 
             }

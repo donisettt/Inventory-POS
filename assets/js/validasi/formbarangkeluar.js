@@ -3,16 +3,20 @@ function validateForm() {
     var barang = document.forms["myForm"]["barang"].value;
     var jmlbarang = document.forms["myForm"]["jmlbarang"].value;
     var stok = $('#stok').text();
+    var cus = document.forms["myForm"]["customer"].value;
     var total = parseInt(stok) - parseInt(jmlbarang);
 
     if (tgl == '') {
-        validasi('Tanggal Keluar wajib di isi!', 'warning');
+        validasi('Tanggal Keluar tidak boleh kosong!', 'warning');
         return false;
     } else if (barang == '') {
-        validasi('Barang wajib di isi!', 'warning');
+        validasi('Barang tidak boleh kosong!', 'warning');
+        return false;
+    } else if (cus == '') {
+        validasi("Customer tidak boleh kosong!", 'warning');
         return false;
     } else if (jmlbarang == '') {
-        validasi('Jumlah Keluar wajib di isi!', 'warning');
+        validasi('Jumlah Keluar tidak boleh kosong!', 'warning');
         return false;
     } else if (total < 0) {
         validasi('Jumlah melewati stok barang!', 'warning');
@@ -30,13 +34,13 @@ function validateFormUpdate() {
     var total = (parseInt(stok) + parseInt(jmlbaranglama)) - parseInt(jmlbarang);
 
     if (tgl == '') {
-        validasi('Tanggal Keluar wajib di isi!', 'warning');
+        validasi('Tanggal Keluar tidak boleh kosong!', 'warning');
         return false;
     } else if (barang == '') {
-        validasi('Barang wajib di isi!', 'warning');
+        validasi('Barang tidak boleh kosong!', 'warning');
         return false;
     } else if (jmlbarang == '') {
-        validasi('Jumlah Keluar wajib di isi!', 'warning');
+        validasi('Jumlah Keluar tidak boleh kosong!', 'warning');
         return false;
     } else if (total < 0) {
         validasi('Jumlah melewati stok barang!', 'warning');
