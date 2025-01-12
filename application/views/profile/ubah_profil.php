@@ -10,19 +10,24 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <div class="d-sm-flex">
-                <a href="<?= base_url() ?>profile" class="btn btn-md btn-circle btn-primary">
-                    <i class="fas fa-arrow-left"></i>
-                </a>
                 &nbsp;
-                <h1 class="h2 mb-0 text-gray-800">Ubah Pengguna</h1>
+                <h1 class="h2 mb-0 text-gray-800">Ubah Profile</h1>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-md btn-icon-split">
-                <span class="text text-white">Simpan</span>
-                <span class="icon text-white-50">
-                    <i class="fas fa-save"></i>
-                </span>
-            </button>
+            <div>
+                <a href="<?= base_url() ?>profile" class="btn btn-danger btn-sm btn-icon-split mr-2">
+                    <span class="text text-white">Batal</span>
+                    <span class="icon text-white-50">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </a>
+                <button type="submit" class="btn btn-primary btn-sm btn-icon-split">
+                    <span class="text text-white">Simpan</span>
+                    <span class="icon text-white-50">
+                        <i class="fas fa-save"></i>
+                    </span>
+                </button>
+            </div>
 
         </div>
 
@@ -30,8 +35,8 @@
             <div class="col-lg-8 mb-4">
                 <!-- form -->
                 <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Form Pengguna</h6>
+                    <div class="card-header py-3 bg-primary">
+                        <h6 class="m-0 font-weight-bold text-white">Ubah Profile</h6>
                     </div>
                     <div class="card-body">
                         <div class="col-lg-12">
@@ -98,17 +103,17 @@
             <div class="col-lg-4 mb-4">
                 <!-- file -->
                 <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Foto</h6>
+                    <div class="card-header py-3 bg-primary">
+                        <h6 class="m-0 font-weight-bold text-white">Ubah Foto</h6>
                     </div>
                     <div class="card-body">
-                        <div class="card bg-warning text-white shadow">
+                        <!-- <div class="card bg-warning text-white shadow">
                             <div class="card-body">
                                 Format
                                 <div class="text-white-45 small">.png .jpeg .jpg .tiff .gif .tif</div>
                             </div>
                         </div>
-                        <br>
+                        <br> -->
                         <center>
                             <div>
                                 <img src="<?= base_url() ?>assets/upload/pengguna/<?= $u->foto ?>" id="outputImg" width="200"
@@ -116,30 +121,29 @@
                             </div>
                         </center>
                         <br>
-                        <span class="text-danger">*kosongkan jika tidak ingin merubah</span>
                         <!-- foto -->
                         <div class="form-group">
                             <div class="custom-file">
                                 <input type="hidden" name="fotoLama" value="<?= $u->foto ?>">
                                 <input class="custom-file-input" type="file" id="GetFile" name="photo"
                                     onchange="VerifyFileNameAndFileSize()" accept=".png,.gif,.jpeg,.tiff,.jpg">
-                                <label class="custom-file-label" for="customFile">Pilih File</label>
+                                <label class="custom-file-label" for="customFile">Pilih Foto</label>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Ubah Password</h6>
+                    <div class="card-header py-3 bg-primary">
+                        <h6 class="m-0 font-weight-bold text-white">Ubah Password</h6>
                     </div>
                     <div class="card-body">
 
-                        <div class="card bg-warning text-white mb-3 shadow">
+                        <!-- <div class="card bg-warning text-white mb-3 shadow">
                             <div class="card-body">
                                 Kosongkan jika tidak ingin merubah!
                             </div>
-                        </div>
+                        </div> -->
                         
                         <!-- Password lama -->
                         <input name="pwdLama" type="hidden" value="<?= $u->password ?>">

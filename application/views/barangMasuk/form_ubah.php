@@ -16,19 +16,24 @@ function format($tanggal){
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <div class="d-sm-flex">
-                <a href="<?= base_url() ?>barang_masuk" class="btn btn-md btn-circle btn-secondary">
-                    <i class="fas fa-arrow-left"></i>
-                </a>
                 &nbsp;
                 <h1 class="h2 mb-0 text-gray-800">Ubah Barang Masuk</h1>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-md btn-icon-split">
-                <span class="text text-white">Simpan</span>
-                <span class="icon text-white-50">
-                    <i class="fas fa-save"></i>
-                </span>
-            </button>
+            <div>
+                <a href="<?= base_url() ?>barang_masuk" class="btn btn-danger btn-sm btn-icon-split mr-2">
+                    <span class="text text-white">Batal</span>
+                    <span class="icon text-white-50">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </a>
+                <button type="submit" class="btn btn-primary btn-sm btn-icon-split">
+                    <span class="text text-white">Simpan</span>
+                    <span class="icon text-white-50">
+                        <i class="fas fa-save"></i>
+                    </span>
+                </button>
+            </div>
 
         </div>
 
@@ -37,7 +42,7 @@ function format($tanggal){
                 <!-- form -->
                 <div class="card border-bottom-primary shadow mb-4">
                     <div class="card-header py-3 bg-primary">
-                        <h6 class="m-0 font-weight-bold text-white">Form Barang Masuk</h6>
+                        <h6 class="m-0 font-weight-bold text-white">Ubah Barang Masuk</h6>
                     </div>
                     <div class="card-body">
                         <div class="col-lg-12">
@@ -111,7 +116,7 @@ function format($tanggal){
                 <!-- file -->
                 <div class="card border-bottom-primary shadow mb-4">
                     <div class="card-header py-3 bg-primary">
-                        <h6 class="m-0 font-weight-bold text-white">Preview</h6>
+                        <h6 class="m-0 font-weight-bold text-white">Deskripsi</h6>
                     </div>
                     <div class="card-body">
                         <div class="col-lg-12">
@@ -125,15 +130,11 @@ function format($tanggal){
 
                             <label><b>Nama Barang</b></label>
                             <br>
-                            <h6 class="h6 text-gray-800" id="judul"><?= $d->nama_barang ?></h6>
-                            <!-- Divider -->
-                            <hr class="sidebar-divider">
+                            <h6 class="h6 text-gray-800" id="judul"><?= $d->nama_barang ?></h6><br>
 
                             <label><b>Stok Barang</b></label>
                             <br>
                             <h6 class="h6 text-gray-800" id="stok"><?= $d->stok ?></h6>
-                            <!-- Divider -->
-                            <hr class="sidebar-divider">
 
 
                         </div>

@@ -44,7 +44,7 @@
                                         <a href="#" data-toggle="modal" data-target="#formU"
                                             onclick="ambilData('<?= $s->id_supplier ?>')"
                                             class="btn btn-circle btn-success btn-sm">
-                                            <i class="fas fa-pen"></i>
+                                            <i class="fas fa-edit"></i>
                                         </a>
                                         <a href="#" onclick="konfirmasi('<?= $s->id_supplier ?>')"
                                             class="btn btn-circle btn-danger btn-sm">

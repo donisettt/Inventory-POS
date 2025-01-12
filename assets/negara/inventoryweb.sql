@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2025 at 05:49 PM
+-- Generation Time: Jan 08, 2025 at 04:35 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -202,9 +202,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama`, `username`, `email`, `notelp`, `level`, `password`, `foto`, `status`) VALUES
-('USR-001', 'Admin Gudang', 'admin', 'admin@admin.com', '087856123445', 'admin', '0192023a7bbd73250516f069df18b500', 'doni.jpg', 'Aktif'),
-('USR-002', 'Staff Gudang', 'gudang', 'gudang@gmail.com', '087817379229', 'gudang', '202446dd1d6028084426867365b0c7a1', 'user.png', 'Aktif'),
-('USR-003', 'Manajer Ariyan', 'manajer', 'manajer@gmail.com', '089291889228', 'manajer', '69b731ea8f289cf16a192ce78a37b4f0', 'WhatsApp_Image_2024-07-05_at_07_43_37_8327c91d.jpg', 'Aktif');
+('MDN-USR-001', 'Admin Gudang', 'admin', 'admin@admin.com', '087856123445', 'admin', '0192023a7bbd73250516f069df18b500', 'doni.jpg', 'Aktif'),
+('MDN-USR-002', 'Staff Gudang', 'gudang', 'gudang@gmail.com', '087817379229', 'gudang', '202446dd1d6028084426867365b0c7a1', 'user.png', 'Aktif'),
+('MDN-USR-003', 'Manajer Ariyan', 'manajer', 'manajer@gmail.com', '089291889228', 'manajer', '69b731ea8f289cf16a192ce78a37b4f0', 'WhatsApp_Image_2024-07-05_at_07_43_37_8327c91d.jpg', 'Aktif');
 
 --
 -- Indexes for dumped tables

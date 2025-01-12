@@ -9,19 +9,23 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <div class="d-sm-flex">
-                <a href="<?= base_url() ?>barang" class="btn btn-md btn-circle btn-primary">
-                    <i class="fas fa-arrow-left"></i>
-                </a>
                 &nbsp;
                 <h1 class="h2 mb-0 text-gray-800">Ubah Barang</h1>
             </div>
-            <button type="submit" class="btn btn-primary btn-md btn-icon-split">
-                <span class="text text-white">Simpan</span>
-                <span class="icon text-white-50">
-                    <i class="fas fa-save"></i>
-                </span>
-            </button>
-
+            <div>
+                <a href="<?= base_url() ?>barang" class="btn btn-danger btn-sm btn-icon-split mr-2">
+                    <span class="text text-white">Batal</span>
+                    <span class="icon text-white-50">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </a>
+                <button type="submit" class="btn btn-primary btn-sm btn-icon-split">
+                    <span class="text text-white">Simpan</span>
+                    <span class="icon text-white-50">
+                        <i class="fas fa-save"></i>
+                    </span>
+                </button>
+            </div>
         </div>
 
         <div class="d-sm-flex  justify-content-between mb-0">
@@ -29,7 +33,7 @@
                 <!-- Illustrations -->
                 <div class="card border-bottom-primary shadow mb-4">
                     <div class="card-header py-3 bg-primary">
-                        <h6 class="m-0 font-weight-bold text-white">Form Barang</h6>
+                        <h6 class="m-0 font-weight-bold text-white">Ubah Barang</h6>
                     </div>
                     <div class="card-body">
                         <div class="col-lg-12">
@@ -129,24 +133,23 @@
                 <!-- Illustrations -->
                 <div class="card border-bottom-primary shadow mb-4">
                     <div class="card-header py-3 bg-primary">
-                        <h6 class="m-0 font-weight-bold text-white">Foto</h6>
+                        <h6 class="m-0 font-weight-bold text-white">Ubah Foto</h6>
                     </div>
                     <div class="card-body">
-                        <div class="card bg-warning text-white shadow">
+                        <!-- <div class="card bg-warning text-white shadow">
                             <div class="card-body">
                                 Format
                                 <div class="text-white-45 small">.png .jpeg .jpg .tiff .gif .tif</div>
                             </div>
                         </div>
-                        <br>
+                        <br> -->
                         <center>
                             <div id="img">
                                 <img src="<?= base_url() ?>assets/upload/barang/<?= $d->foto ?>" id="outputImg"
                                     width="200" maxheight="300">
                             </div>
                         </center>
-                        <br>
-                        <span class="text-danger">*kosongkan jika tidak ingin merubah</span>
+
                         <!-- foto -->
                         <div class="form-group">
                             <div class="custom-file">

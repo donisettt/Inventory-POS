@@ -64,12 +64,12 @@ function tgl_indo($tanggal){
                                 <td><?= tgl_indo($bk->tgl_keluar) ?></td>
                                 <td><?= $bk->nama_customer ?></td>
                                 <td><?= $bk->nama_barang ?></td>
-                                <td><span class="badge badge-danger"> <i class="fa fa-minus"></i> <?= $bk->jumlah_keluar ?></span></td>
+                                <td><span class="badge badge-danger"><?= $bk->jumlah_keluar ?></span></td>
                                 <td>
                                     <center>
                                         <a href="<?= base_url() ?>barangKeluar/ubah/<?= $bk->id_barang_keluar ?>"
                                             class="btn btn-circle btn-success btn-sm">
-                                            <i class="fas fa-pen"></i>
+                                            <i class="fas fa-edit"></i>
                                         </a>
                                         <a href="#"
                                             onclick="konfirmasi('<?= $bk->id_barang_keluar ?>','<?= $bk->jumlah_keluar ?>','<?= $bk->id_barang ?>')"

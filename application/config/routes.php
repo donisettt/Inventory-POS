@@ -22,9 +22,11 @@ $route['barang_keluar'] = 'barangKeluar/index';
 //laporan
 $route['lap_barang_masuk'] = 'barangMasuk/laporan';
 $route['lap_barang_keluar'] = 'barangKeluar/laporan';
+$route['lap_stok'] = 'barang/laporan';
 
 
 
 $route['(:any)'] = 'gagal/index/$1';
 $route['404_override'] = 'Gagal/index';
+$route['maintenance'] = 'Maintenance/index';
 $route['translate_uri_dashes'] = FALSE;

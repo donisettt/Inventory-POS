@@ -47,11 +47,13 @@ function logout() {
     var base_url = $('#baseurl').val();
 
     swal.fire({
-        title: "Apakah Anda yakin?",
+        title: "Apakah Anda Yakin?",
         icon: "warning",
         showCancelButton: true,
         confirmButtonText: 'Ya, keluar!',
         confirmButtonColor: '#4e73df',
+        cancelButtonText: 'Batal',
+        cancelButtonColor: '#d33',
     }).then((result) => {
         if (result.value) {
             Swal.fire({

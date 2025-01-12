@@ -65,13 +65,13 @@ function tgl_indo($tanggal){
                                 <td><?= $bm->nama_barang ?></td>
                                 <td><?= tgl_indo($bm->tgl_masuk) ?></td>
                                 <td><?= $bm->nama_supplier ?></td>
-                                <td><span class="badge badge-success"> <i class="fa fa-plus"></i> <?= $bm->jumlah_masuk ?></span></td>
+                                <td><span class="badge badge-success"><?= $bm->jumlah_masuk ?></span></td>
                                 <td><?= $bm->id_user ?></td>
                                 <td>
                                     <center>
                                         <a href="<?= base_url() ?>barangMasuk/ubah/<?= $bm->id_barang_masuk ?>"
                                             class="btn btn-circle btn-success btn-sm">
-                                            <i class="fas fa-pen"></i>
+                                            <i class="fas fa-edit"></i>
                                         </a>
                                         <a href="#"
                                             onclick="konfirmasi('<?= $bm->id_barang_masuk ?>','<?= $bm->jumlah_masuk ?>','<?= $bm->id_barang ?>')"

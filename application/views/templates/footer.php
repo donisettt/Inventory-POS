@@ -30,7 +30,7 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Apakah Anda yakin?</div>
+            <div class="modal-body">Apakah Anda Yakin?</div>
             <div class="modal-footer">
                 <button class="btn btn-danger" type="button" data-dismiss="modal">Batal</button>
                 <a class="btn btn-primary" href="<?= base_url() ?>login/logout">Ya, keluar!</a>

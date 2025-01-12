@@ -74,151 +74,141 @@ if (!$this->session->has_userdata('login_session')) {
                     <span>Dashboard</span></a>
             </li>
 
+            <!-- Bagian Sidebar Menu Utama -->
+
              <!-- Divider -->
              <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Data Master
+             <div class="sidebar-heading">
+                Menu Utama
             </div>
 
-            <?php if($this->session->userdata('login_session')['level'] == 'admin'): ?>
-            
-            <?php if($title == 'User'): ?>
-            <li class="nav-item active">
-                <?php else: ?>
-            <li class="nav-item">
-                <?php endif; ?>
-                <a class="nav-link" href="<?= base_url() ?>user">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>Data User</span>
-                </a>
-            </li>
-
-            <?php endif; ?>
-
              <?php if($this->session->userdata('login_session')['level'] == 'admin' || $this->session->userdata('login_session')['level'] == 'gudang'): ?>
-
-
-            <?php if($title == 'Supplier'): ?>
-            <li class="nav-item active">
-                <?php else: ?>
+            <!-- Heading -->
             <li class="nav-item">
-                <?php endif; ?>
-                <a class="nav-link" href="<?= base_url() ?>supplier">
-                    <i class="fas fa-fw fa-users"></i>
-                    <span>Supplier</span>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMaster" aria-expanded="true" aria-controls="collapseMaster">
+                    <i class="fas fa-fw fa-database"></i>
+                    <span>Data Master</span>
                 </a>
-            </li>
+                <div id="collapseMaster" class="collapse" aria-labelledby="headingMaster" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Data Master</h6>
 
-            <?php if($title == 'Customer'): ?>
-            <li class="nav-item active">
-                <?php else: ?>
-            <li class="nav-item">
-                <?php endif; ?>
-                <a class="nav-link" href="<?= base_url() ?>customer">
-                    <i class="fas fa-fw fa-user-friends"></i>
-                    <span>Customer</span>
-                </a>
-            </li>
+                        <?php if($this->session->userdata('login_session')['level'] == 'admin'): ?>
+                            <?php if($title == 'User'): ?>
+                                <a class="collapse-item active" href="<?= base_url() ?>user"><b>Data User</b></a>
+                            <?php else: ?>
+                                <a class="collapse-item" href="<?= base_url() ?>user"><b>Data User</b></a>
+                            <?php endif; ?>
+                        <?php endif; ?>
 
+                        <?php if($this->session->userdata('login_session')['level'] == 'admin' || $this->session->userdata('login_session')['level'] == 'gudang'): ?>
+                            <?php if($title == 'Supplier'): ?>
+                                <a class="collapse-item active" href="<?= base_url() ?>supplier"><b>Supplier</b></a>
+                            <?php else: ?>
+                                <a class="collapse-item" href="<?= base_url() ?>supplier"><b>Supplier</b></a>
+                            <?php endif; ?>
+
+                            <?php if($title == 'Customer'): ?>
+                                <a class="collapse-item active" href="<?= base_url() ?>customer"><b>Customer</b></a>
+                            <?php else: ?>
+                                <a class="collapse-item" href="<?= base_url() ?>customer"><b>Customer</b></a>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </li>
             <?php endif; ?>
+
+            <!-- Akhir Sidebar Menu Utama -->
+
+            <!-- Sidebar Master Barang -->
 
             <?php if($this->session->userdata('login_session')['level'] == 'admin' || $this->session->userdata('login_session')['level'] == 'gudang' || $this->session->userdata('login_session')['level'] == 'manajer'): ?>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <?php if($title == 'Barang' or $title == 'Satuan Barang' or $title == 'Jenis Barang'): ?>
-            <li class="nav-item active">
-                <?php else: ?>
-            <li class="nav-item">
-                <?php endif; ?>
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-                    aria-controls="collapsePages">
+            <!-- Nav Item - Master Barang -->
+            <li class="nav-item <?php if($title == 'Barang' || $title == 'Satuan Barang' || $title == 'Jenis Barang') echo 'active'; ?>">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-box"></i>
                     <span>Master Barang</span>
                 </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div id="collapsePages" class="collapse <?php if($title == 'Barang' || $title == 'Satuan Barang' || $title == 'Jenis Barang') echo 'show'; ?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Master Barang</h6>
                         <?php if($this->session->userdata('login_session')['level'] == 'admin' || $this->session->userdata('login_session')['level'] == 'gudang'): ?>
-                        <a class="collapse-item" href="<?= base_url() ?>satuan"><b>Satuan Barang</b></a>
-                        <a class="collapse-item" href="<?= base_url() ?>jenis"><b>Jenis Barang</b></a>
+                            <a class="collapse-item <?php if($title == 'Satuan Barang') echo 'active'; ?>" href="<?= base_url() ?>satuan"><b>Satuan Barang</b></a>
+                            <a class="collapse-item <?php if($title == 'Jenis Barang') echo 'active'; ?>" href="<?= base_url() ?>jenis"><b>Jenis Barang</b></a>
                         <?php endif; ?>
-                        <a class="collapse-item" href="<?= base_url() ?>barang"><b>Data Barang</b></a>
+                        <a class="collapse-item <?php if($title == 'Barang') echo 'active'; ?>" href="<?= base_url() ?>barang"><b>Data Barang</b></a>
                     </div>
-
                 </div>
             </li>
-
             <?php endif; ?>
+
+            <!-- Akhir Sidebar Master Barang -->
+
+            <!-- Sidebar Transaksi -->
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
             <?php if($this->session->userdata('login_session')['level'] == 'admin' || $this->session->userdata('login_session')['level'] == 'gudang'): ?>
-
             <!-- Heading -->
             <div class="sidebar-heading">
                 Transaksi
             </div>
-        
-             <!-- Nav Item - Pages Collapse Menu -->
-            <?php if($title == 'Barang Masuk' or $title == 'Barang Keluar'): ?>
-            <li class="nav-item active">
-                <?php else: ?>
-            <li class="nav-item">
-                <?php endif; ?>
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages1" aria-expanded="true"
-                    aria-controls="collapsePages1">
+
+            <!-- Nav Item - Transaksi -->
+            <li class="nav-item <?php if($title == 'Barang Masuk' || $title == 'Barang Keluar') echo 'active'; ?>">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages1" aria-expanded="true" aria-controls="collapsePages1">
                     <i class="fas fa-sync"></i>
                     <span>Transaksi</span>
                 </a>
-                <div id="collapsePages1" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div id="collapsePages1" class="collapse <?php if($title == 'Barang Masuk' || $title == 'Barang Keluar') echo 'show'; ?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Data Transaksi</h6>
-                        <a class="collapse-item" href="<?= base_url() ?>barang_masuk"><b>Barang Masuk</b></a>
-                        <a class="collapse-item" href="<?= base_url() ?>barang_keluar"><b>Barang Keluar</b></a>
+                        <a class="collapse-item <?php if($title == 'Barang Masuk') echo 'active'; ?>" href="<?= base_url() ?>barang_masuk"><b>Barang Masuk</b></a>
+                        <a class="collapse-item <?php if($title == 'Barang Keluar') echo 'active'; ?>" href="<?= base_url() ?>barang_keluar"><b>Barang Keluar</b></a>
                     </div>
-
-                </div>
-            </li>
-
-             <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <?php endif; ?>
-
-            <?php if($this->session->userdata('login_session')['level'] == 'admin'): ?>
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Report
-            </div>
-
-            <?php if($title == 'Laporan Barang Masuk' or $title == 'Laporan Barang Keluar'): ?>
-            <li class="nav-item active">
-                <?php else: ?>
-            <li class="nav-item">
-                <?php endif; ?>
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages2" aria-expanded="true"
-                    aria-controls="collapsePages2">
-                    <i class="fas fa-fw fa-print"></i>
-                    <span>Laporan</span>
-                </a>
-                <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Laporan</h6>
-                        <a class="collapse-item" href="<?= base_url() ?>lap_barang_masuk"><b>Barang Masuk</b></a>
-                        <a class="collapse-item" href="<?= base_url() ?>lap_barang_keluar"><b>Barang Keluar</b></a>
-                    </div>
-
                 </div>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
-            <?php endif; ?>                       
+            <?php endif; ?>
+
+            <!-- Akhir Sidebar Transaksi -->
+
+            <!-- Sidebar Laporan -->
+
+            <?php if($this->session->userdata('login_session')['level'] == 'admin'): ?>
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Report
+            </div>
+
+            <!-- Nav Item - Laporan -->
+            <li class="nav-item <?php if($title == 'Laporan Barang Masuk' || $title == 'Laporan Barang Keluar') echo 'active'; ?>">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages2" aria-expanded="true" aria-controls="collapsePages2">
+                    <i class="fas fa-fw fa-print"></i>
+                    <span>Laporan</span>
+                </a>
+                <div id="collapsePages2" class="collapse <?php if($title == 'Laporan Barang Masuk' || $title == 'Laporan Barang Keluar') echo 'show'; ?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Laporan</h6>
+                        <a class="collapse-item <?php if($title == 'Laporan Barang Masuk') echo 'active'; ?>" href="<?= base_url() ?>lap_barang_masuk"><b>Barang Masuk</b></a>
+                        <a class="collapse-item <?php if($title == 'Laporan Barang Keluar') echo 'active'; ?>" href="<?= base_url() ?>lap_barang_keluar"><b>Barang Keluar</b></a>
+                        <a class="collapse-item <?php if($title == 'Laporan Barang Keluar') echo 'active'; ?>" href="<?= base_url() ?>lap_stok"><b>Stok Barang</b></a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <?php endif; ?>     
+            
+            <!-- Akhir Sidebar Laporan -->
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">

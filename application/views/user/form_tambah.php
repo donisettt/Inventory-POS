@@ -8,28 +8,32 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <div class="d-sm-flex">
-                <a href="<?= base_url() ?>user" class="btn btn-md btn-circle btn-secondary">
-                    <i class="fas fa-arrow-left"></i>
-                </a>
                 &nbsp;
-                <h1 class="h2 mb-0 text-gray-800">Tambah Pengguna</h1>
+                <h1 class="h2 mb-0 text-gray-800">Tambah User</h1>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-md btn-icon-split">
-                <span class="text text-white">Simpan</span>
-                <span class="icon text-white-50">
-                    <i class="fas fa-save"></i>
-                </span>
-            </button>
-
+            <div>
+                <a href="<?= base_url() ?>user" class="btn btn-danger btn-sm btn-icon-split mr-2">
+                    <span class="text text-white">Batal</span>
+                    <span class="icon text-white-50">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </a>
+                <button type="submit" class="btn btn-primary btn-sm btn-icon-split">
+                    <span class="text text-white">Simpan</span>
+                    <span class="icon text-white-50">
+                        <i class="fas fa-save"></i>
+                    </span>
+                </button>
+            </div>
         </div>
 
-        <div class="d-sm-flex  justify-content-between mb-0">
+        <div class="d-sm-flex justify-content-between mb-0">
             <div class="col-lg-8 mb-4">
                 <!-- form -->
                 <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Form Pengguna</h6>
+                    <div class="card-header py-3 bg-primary">
+                        <h6 class="m-0 font-weight-bold text-white">Tambah User</h6>
                     </div>
                     <div class="card-body">
                         <div class="col-lg-12">
@@ -58,7 +62,7 @@
                                     <option value="">--Pilih--</option>
                                     <option value="admin">Admin</option>
                                     <option value="manajer">Manajer</option>
-                                    <option value="gudang">Gudang</option>
+                                    <option value="gudang">Staf</option>
                                 </select>
                             </div>
 
@@ -84,17 +88,17 @@
             <div class="col-lg-4 mb-4">
                 <!-- file -->
                 <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Foto</h6>
+                    <div class="card-header py-3 bg-primary">
+                        <h6 class="m-0 font-weight-bold text-white">Foto</h6>
                     </div>
                     <div class="card-body">
-                        <div class="card bg-warning text-white shadow">
+                        <!-- <div class="card bg-warning text-white shadow">
                             <div class="card-body">
                                 Format
                                 <div class="text-white-45 small">.png .jpeg .jpg .tiff .gif .tif</div>
                             </div>
                         </div>
-                        <br>
+                        <br> -->
                         <center>
                             <div>
                                 <img src="<?= base_url() ?>assets/upload/pengguna/user.png" id="outputImg" width="200"
@@ -107,7 +111,7 @@
                             <div class="custom-file">
                                 <input class="custom-file-input" type="file" id="GetFile" name="photo"
                                     onchange="VerifyFileNameAndFileSize()" accept=".png,.gif,.jpeg,.tiff,.jpg">
-                                <label class="custom-file-label" for="customFile">Pilih File</label>
+                                <label class="custom-file-label" for="customFile">Pilih Foto</label>
                             </div>
                         </div>
                     </div>

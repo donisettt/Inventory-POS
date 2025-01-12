@@ -15,13 +15,14 @@
 
     <div class="col-lg-12 mb-4">
 
-    <div class="card shadow mb-4">
+    <div class="card shadow mb-4 border-bottom-primary">
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-hover" id="dtHorizontalExample" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th width="1%">No</th>
+                                <th>ID User</th>
                                 <th>Foto</th>
                                 <th>Nama User</th>
                                 <th>Email</th>
@@ -34,6 +35,7 @@
                             <?php $no=1; foreach ($user as $u): ?>
                             <tr>
                                 <td onclick="detail('<?= $u->id_user ?>')"><?= $no++ ?>.</td>
+                                <td onclick="detail('<?= $u->id_user ?>')"><?= $u->id_user ?></td>
                                 <td onclick="detail('<?= $u->id_user ?>')"><img style="border-radius: 5px;" src="assets/upload/pengguna/<?= $u->foto ?>" alt=""
                                         width="50px"></td>
                                 <td onclick="detail('<?= $u->id_user ?>')"><?= $u->nama ?></td>
@@ -54,7 +56,11 @@
                                     <center>
                                         <a href="<?= base_url() ?>user/ubah/<?= $u->id_user ?>"
                                             class="btn btn-circle btn-success btn-sm">
-                                            <i class="fas fa-pen"></i>
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a href="<?= base_url() ?>user/detail_data/<?= $u->id_user ?>"
+                                            class="btn btn-circle btn-info btn-sm">
+                                            <i class="fas fa-info"></i>
                                         </a>
                                         <a href="#" onclick="konfirmasi('<?= $u->id_user ?>')"
                                             class="btn btn-circle btn-danger btn-sm">

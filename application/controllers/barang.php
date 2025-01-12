@@ -24,6 +24,15 @@ class Barang extends CI_Controller {
 		$this->load->view('templates/footer');
     }
 
+	public function laporan()
+	{
+		$data['title'] = 'Laporan Stok Barang';
+
+		$this->load->view('templates/header', $data);
+		$this->load->view('errors/maintenance');
+		$this->load->view('templates/footer');
+	}
+
     public function tambah()
 	{
         $data['title'] = 'Barang';

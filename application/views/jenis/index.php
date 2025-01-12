@@ -35,14 +35,14 @@
                                 <td><?= $no++ ?>.</td>
                                 <td>
                                     <?php if($j->nama_jenis == ''): ?>
-                                    <i> (Tidak diisi) </i>
+                                    <i> (Kosong) </i>
                                     <?php else: ?>
                                     <?= $j->nama_jenis ?>
                                     <?php endif; ?>
                                 </td>
                                 <td>
                                     <?php if($j->ket == ''): ?>
-                                    <i> (Tidak diisi) </i>
+                                    <i> (Kosong) </i>
                                     <?php else: ?>
                                     <?= $j->ket ?>
                                     <?php endif; ?>
@@ -51,7 +51,7 @@
                                     <a href="#" data-toggle="modal" data-target="#formU"
                                         onclick="ambilData('<?= $j->id_jenis ?>')"
                                         class="btn btn-circle btn-success btn-sm">
-                                        <i class="fas fa-pen"></i>
+                                        <i class="fas fa-edit"></i>
                                     </a>
                                     <a href="#" onclick="konfirmasi('<?= $j->id_jenis ?>')"
                                         class="btn btn-circle btn-danger btn-sm">
