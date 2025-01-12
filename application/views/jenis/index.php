@@ -102,17 +102,17 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary btn-icon-split">
-                        <span class="icon text-white-50">
-                            <i class="fas fa-save"></i>
-                        </span>
-                        <span class="text text-white">Simpan</span>
-                    </button>
-                    <button type="button" class="btn btn-danger btn-icon-split" data-dismiss="modal">
+                    <button type="button" class="btn btn-sm btn-danger btn-icon-split" data-dismiss="modal">
                         <span class="icon text-white-50">
                             <i class="fas fa-times"></i>
                         </span>
                         <span class="text text-white">Batal</span>
+                    </button>
+                    <button type="submit" class="btn btn-sm btn-primary btn-icon-split">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-save"></i>
+                        </span>
+                        <span class="text text-white">Simpan</span>
                     </button>
 
                 </div>
@@ -150,17 +150,17 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary btn-icon-split">
-                        <span class="icon text-white-50">
-                            <i class="fas fa-save"></i>
-                        </span>
-                        <span class="text text-white">Simpan</span>
-                    </button>
-                    <button type="button" class="btn btn-danger btn-icon-split" data-dismiss="modal">
+                    <button type="button" class="btn btn-sm btn-danger btn-icon-split" data-dismiss="modal">
                         <span class="icon text-white-50">
                             <i class="fas fa-times"></i>
                         </span>
                         <span class="text text-white">Batal</span>
+                    </button>
+                    <button type="submit" class="btn btn-sm btn-primary btn-icon-split">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-save"></i>
+                        </span>
+                        <span class="text text-white">Simpan</span>
                     </button>
                 </div>
             </div>

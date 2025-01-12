@@ -198,7 +198,7 @@ if (!$this->session->has_userdata('login_session')) {
                         <h6 class="collapse-header">Laporan</h6>
                         <a class="collapse-item <?php if($title == 'Laporan Barang Masuk') echo 'active'; ?>" href="<?= base_url() ?>lap_barang_masuk"><b>Barang Masuk</b></a>
                         <a class="collapse-item <?php if($title == 'Laporan Barang Keluar') echo 'active'; ?>" href="<?= base_url() ?>lap_barang_keluar"><b>Barang Keluar</b></a>
-                        <a class="collapse-item <?php if($title == 'Laporan Barang Keluar') echo 'active'; ?>" href="<?= base_url() ?>lap_stok"><b>Stok Barang</b></a>
+                        <a class="collapse-item <?php if($title == 'Laporan Stok Barang') echo 'active'; ?>" href="<?= base_url() ?>lap_stok"><b>Stok Barang</b></a>
                     </div>
                 </div>
             </li>

@@ -129,7 +129,7 @@
                         <br> -->
                         <center>
                             <div id="img">
-                                <img src="<?= base_url() ?>assets/upload/barang/box.png" id="outputImg" width="200"
+                                <img src="<?= base_url() ?>assets/upload/barang/tampil.png" id="outputImg" width="200"
                                     maxheight="300">
                             </div>
                         </center>

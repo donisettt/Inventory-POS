@@ -101,7 +101,7 @@
                         <br> -->
                         <center>
                             <div>
-                                <img src="<?= base_url() ?>assets/upload/pengguna/user.png" id="outputImg" width="200"
+                                <img src="<?= base_url() ?>assets/upload/pengguna/user_tampil.png" id="outputImg" width="200"
                                     maxheight="300">
                             </div>
                         </center>
