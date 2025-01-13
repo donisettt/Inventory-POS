@@ -32,14 +32,15 @@ function cek_user(usr, pwd) {
             if (hasil.respon == 'success') {
                 pesan('Berhasil Login!', 'success', 'true');
                 $("#login").text("Login");
+            } else if (hasil.respon == 'inactive') {
+                pesan('Akun Anda tidak aktif. Silakan hubungi Admin!', 'error', 'false');
+                $("#login").text("Login");
             } else {
                 pesan('Username atau password salah!', 'error', 'false');
                 $("#login").text("Login");
-
             }
         }
     });
-
 }
 
 function logout() {

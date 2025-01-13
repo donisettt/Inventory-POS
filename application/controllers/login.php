@@ -25,35 +25,45 @@ class Login extends CI_Controller {
 	public function proses_login()
 	{
 		$username = $this->input->post('user');
-    	$password = $this->input->post('pwd');
+		$password = $this->input->post('pwd');
 
-    	$where = array(
-    		'username' => $username,
-    		'password' => md5($password)
-    	);
+		// Menyiapkan kondisi untuk query
+		$where = array(
+			'username' => $username,
+			'password' => md5($password)
+		);
 
-    	$cek = $this->login_model->cek_login($where, 'user')->num_rows();
-    	$data = $this->login_model->cek_login($where, 'user')->row_array();
-    	if ($cek > 0) {
+		// Mengecek data login
+		$cek = $this->login_model->cek_login($where, 'user')->num_rows();
+		$data = $this->login_model->cek_login($where, 'user')->row_array();
 
-			$userdata = [
-				'id_user' => $data['id_user'],
-    			'username' => $data['nama'],
-    			'status' => $data['status'],
-    			'level' => $data['level'],
-    			'foto' => $data['foto']
-			];
+		if ($cek > 0) {
+			// Mengecek status user (misalnya status 1 adalah aktif, 0 adalah tidak aktif)
+			if ($data['status'] == 'Tidak Aktif') {
+				// Jika status tidak aktif, kirimkan respons gagal
+				$respon = array('respon' => 'inactive');
+				echo json_encode($respon);
+			} else {
+				// Menyimpan data login ke session jika status aktif
+				$userdata = [
+					'id_user' => $data['id_user'],
+					'username' => $data['nama'],
+					'status' => $data['status'],
+					'level' => $data['level'],
+					'foto' => $data['foto']
+				];
 
-			$this->session->set_userdata('login_session',$userdata);
-			
-			$respon = array('respon' => 'success');
-			echo json_encode($respon);
-    	}
-    	else{
+				$this->session->set_userdata('login_session', $userdata);
+
+				// Mengirimkan respons sukses
+				$respon = array('respon' => 'success');
+				echo json_encode($respon);
+			}
+		} else {
+			// Jika login gagal karena username atau password salah
 			$respon = array('respon' => 'failed');
 			echo json_encode($respon);
 		}
-
 	}
 
 	public function logout()
