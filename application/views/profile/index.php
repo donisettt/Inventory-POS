@@ -18,7 +18,7 @@
         <div class="col-lg-8 mb-4">
 
 <!-- Illustrations -->
-<div class="card shadow mb-1" id="profil">
+<div class="card shadow border-bottom-primary" id="profil">
     <div class="card-body">
         <center>
             <div class="col-lg-12">
@@ -36,44 +36,47 @@
             <div class="col-lg-12">
                 <center>
                     <h5 class="h5 mb-0 text-gray-800 d-sm-flex justify-content-center">
-                        <i class="fa fa-envelope"></i>
+                        Email :
                         &nbsp;
                         <div class="div" id="email">-</div>
                     </h5>
+                    <br>
                 </center>
-                <br>
             </div>
             <div class="col-lg-12">
                 <center>
                     <h5 class="h5 mb-0 text-gray-800 d-sm-flex justify-content-center">
-                        <i class="fa fa-phone"></i>
+                        Telepon :
                         &nbsp;
                         <div class="div" id="notelp">-</div>
                     </h5>
+                    <br>
                 </center>
-                <br>
             </div>
 
             <div class="col-lg-12">
                 <center>
                 <div class="form-group">
                     <h5 class="h5 mb-0 text-gray-800 d-sm-flex justify-content-center">
-                        <i class="fa fa-check-circle"></i>
+                        Status :
                         &nbsp;
                         <div class="div" id="status">-</div>
                     </h5>
                 </div>
                 </center>
             </div>
+            <br>
+
             <div class="col-lg-12">
                 <center>
-                 <h5 class="h5 mb-0 text-gray-800 d-sm-flex justify-content-center">
-                        <i class="fa fa-user"></i>
+                <div class="form-group">
+                    <h5 class="h5 mb-0 text-gray-800 d-sm-flex justify-content-center">
+                        Jabatan :
                         &nbsp;
                         <div class="div" id="level">-</div>
                     </h5>
+                </div>
                 </center>
-                <br>
             </div>
 
         </div>
