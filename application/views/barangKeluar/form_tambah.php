@@ -89,12 +89,14 @@
                             <div class="form-group"><label>Customer</label>
                                 <input type="hidden" name="customer">
                                 <div class="d-sm-flex justify-content-between">
-                                    <span class="text-danger"><i>(Belum Ada Data Customer!)</i></span>
+                                    <span class="text-danger"><i>(Belum Ada Data Customer, Silahkan Hubungi Admin!)</i></span>
+                                    <?php if($this->session->userdata('login_session')['level'] == 'admin'): ?>
                                     <a href="<?= base_url() ?>customer" class="btn btn-sm btn-primary btn-icon-split">
                                         <span class="icon text-white">
                                             <i class="fas fa-plus"></i>
                                         </span>
                                     </a>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             <?php endif; ?>
@@ -123,7 +125,7 @@
                         <div class="col-lg-12">
 
                             <center>
-                                <img id="preview" width="200px" src="<?= base_url() ?>assets/upload/barang/box.png"
+                                <img id="preview" width="200px" src="<?= base_url() ?>assets/upload/barang/tampil.png"
                                     alt="">
                             </center>
 

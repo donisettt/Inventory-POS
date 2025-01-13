@@ -73,7 +73,7 @@
                                     <option value="manajer" 
                                     <?php if($u->level == "manajer"): ?> Selected <?php endif; ?> >Manajer</option>
                                     <option value="gudang" 
-                                    <?php if($u->level == "gudang"): ?> Selected <?php endif; ?> >Gudang</option>
+                                    <?php if($u->level == "gudang"): ?> Selected <?php endif; ?> >Staf Gudang</option>
                                 </select>
                             </div>
 

@@ -134,7 +134,7 @@ if (!$this->session->has_userdata('login_session')) {
                 <div id="collapsePages" class="collapse <?php if($title == 'Barang' || $title == 'Satuan Barang' || $title == 'Jenis Barang') echo 'show'; ?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Master Barang</h6>
-                        <?php if($this->session->userdata('login_session')['level'] == 'admin' || $this->session->userdata('login_session')['level'] == 'gudang'): ?>
+                        <?php if($this->session->userdata('login_session')['level'] == 'admin'): ?>
                             <a class="collapse-item <?php if($title == 'Satuan Barang') echo 'active'; ?>" href="<?= base_url() ?>satuan"><b>Satuan Barang</b></a>
                             <a class="collapse-item <?php if($title == 'Jenis Barang') echo 'active'; ?>" href="<?= base_url() ?>jenis"><b>Jenis Barang</b></a>
                         <?php endif; ?>
@@ -261,32 +261,49 @@ if (!$this->session->has_userdata('login_session')) {
 
                         </li>
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <!-- Wrapper untuk kontainer topbar dengan flexbox -->
+                        <div class="d-flex justify-content-between align-items-center w-100">
+                            <!-- Tanggal dan Hari -->
+                            <?php
+                            // Set locale ke bahasa Indonesia
+                            setlocale(LC_TIME, 'id_ID', 'id_ID.UTF-8');
 
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="namaP"><?= $this->session->userdata('login_session')['username'] ?></span>
-                                <input type="hidden" name="iduser" id="iduser" value="<?= $this->session->userdata('login_session')['id_user'] ?>">
-                                <img class="img-profile rounded-circle" id="img"
-                                    src="<?= base_url() ?>assets/upload/pengguna/<?= $this->session->userdata('login_session')['foto'] ?>">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="<?= base_url() ?>profile">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
+                            // Menampilkan tanggal dalam format Indonesia
+                            $tanggalHari = strftime('%A, %e %B %Y'); // Format: Hari, Tanggal Bulan Tahun
+                            ?>
+
+                            <li class="nav-item mx-auto">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="tanggalHari">
+                                    <?= $tanggalHari ?> <!-- Format hari, tanggal bulan tahun dalam bahasa Indonesia -->
+                                </span>
+                            </li>
+
+                            <div class="topbar-divider d-none d-sm-block"></div>
+
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="namaP">Halo, <?= $this->session->userdata('login_session')['username'] ?></span>
+                                    <input type="hidden" name="iduser" id="iduser" value="<?= $this->session->userdata('login_session')['id_user'] ?>">
+                                    <img class="img-profile rounded-circle" id="img"
+                                        src="<?= base_url() ?>assets/upload/pengguna/<?= $this->session->userdata('login_session')['foto'] ?>">
                                 </a>
-                               
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item logout" href="#" id="logout" onclick="logout()">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
-                        </li>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                    aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="<?= base_url() ?>profile">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Profile
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item logout" href="#" id="logout" onclick="logout()">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            </li>
+                        </div>
 
                     </ul>
 

@@ -3,8 +3,8 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <?php if($this->session->userdata('login_session')['level'] == 'admin') : ?>
         <h1 class="h3 mb-0 text-gray-800">Data Supplier</h1>
+        <?php if($this->session->userdata('login_session')['level'] == 'admin') : ?>
         <a href="" data-toggle="modal" data-target="#form" class="btn btn-sm btn-primary btn-icon-split">
             <span class="text text-white">Tambah Supplier</span>
             <span class="icon text-white-50">
@@ -29,7 +29,9 @@
                                 <th>Nama Supplier</th>
                                 <th>No.Telepon</th>
                                 <th>Alamat</th>
+                                <?php if($this->session->userdata('login_session')['level'] == 'admin') : ?>
                                 <th width="1%">Aksi</th>
+                                <?php endif; ?>
                             </tr>
                         </thead>
                         <tbody id="tbody">
@@ -40,6 +42,7 @@
                                 <td><?= $s->nama_supplier ?></td>
                                 <td><?= $s->notelp ?></td>
                                 <td><?= $s->alamat ?></td>
+                                <?php if($this->session->userdata('login_session')['level'] == 'admin') : ?>
                                 <td>
                                     <center>
                                         <a href="#" data-toggle="modal" data-target="#formU"
@@ -53,6 +56,7 @@
                                         </a>
                                     </center>
                                 </td>
+                                <?php endif; ?>
                             </tr>
                             <?php } ?>
                         </tbody>

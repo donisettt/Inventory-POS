@@ -66,6 +66,32 @@ function format($tanggal){
                                     type="text" placeholder="" autocomplete="off">
                             </div>
 
+                            <!-- Customer -->
+                            <?php if($jmlcustomer > 0): ?>
+                            <div class="form-group"><label>Customer</label>
+                                <select name="customer" class="form-control chosen">
+                                    <option value="">--Pilih--</option>
+                                    <?php foreach($customer as $c): ?>
+                                    <option value="<?= $c->id_customer ?>" 
+                                        <?= $c->id_customer == $d->id_customer ? 'selected' : '' ?>>
+                                        <?= $c->nama_customer ?>
+                                    </option>
+                                    <?php endforeach ?>
+                                </select>
+                            </div>
+                            <?php else: ?>
+                            <div class="form-group"><label>Customer</label>
+                                <input type="hidden" name="customer">
+                                <div class="d-sm-flex justify-content-between">
+                                    <span class="text-danger"><i>(Belum Ada Data Customer, Silahkan Hubungi Admin!)</i></span>
+                                    <a href="<?= base_url() ?>customer" class="btn btn-sm btn-primary btn-icon-split">
+                                        <span class="icon text-white">
+                                            <i class="fas fa-plus"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <?php endif; ?>
 
                             <!-- Jumlah Barang -->
                             <div class="form-group"><label>Jumlah Keluar</label>
@@ -101,7 +127,7 @@ function format($tanggal){
 
                             <label><b>Nama Barang</b></label>
                             <br>
-                            <h6 class="h6 text-gray-800" id="judul"><?= $d->nama_barang ?></h6><br>
+                            <h6 class="h6 text-gray-800" id="judul"><?= $d->nama_barang ?></h6>
 
                             <label><b>Stok Barang</b></label>
                             <br>

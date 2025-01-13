@@ -123,7 +123,7 @@
                         <div class="col-lg-12">
 
                             <center>
-                                <img id="preview" width="200px" src="<?= base_url() ?>assets/upload/barang/box.png"
+                                <img id="preview" width="200px" src="<?= base_url() ?>assets/upload/barang/tampil.png"
                                     alt="">
                             </center>
 

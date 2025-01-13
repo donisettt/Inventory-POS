@@ -2,7 +2,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>PT Mardoni Jaya &copy; <?php echo date('Y'); ?></span>
+            <span><?php echo date('Y'); ?> &copy; PT Mardoni Jaya</span>
         </div>
     </div>
 </footer>

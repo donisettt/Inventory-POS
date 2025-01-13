@@ -13,7 +13,7 @@ function ambilBarang() {
     var barang = $('[name="barang"]').val();
 
     if (barang == '') {
-        $('#preview').attr("src", link + "assets/upload/barang/box.png");
+        $('#preview').attr("src", link + "assets/upload/barang/tampil.png");
         $('#judul').text("-");
         $('#stok').text("-");
     } else {

@@ -103,7 +103,7 @@ class Barang extends CI_Controller {
 		$harga_jual = $this->input->post('harga_jual');
         
         if ($namaFile == '') {
-            $ganti = 'box.png';
+            $ganti = 'tampil.png';
         }else{
           if (! $this->upload->do_upload('photo')) {
             $error = $this->upload->display_errors();
@@ -178,7 +178,7 @@ class Barang extends CI_Controller {
             $data = array('photo' => $this->upload->data());
             $nama_file= $data['photo']['file_name'];
             $ganti = str_replace(" ", "_", $nama_file);
-            if($flama == 'box.png'){
+            if($flama == 'tampil.png'){
 
             }else{
               unlink('./assets/upload/barang/'.$flama.'');
@@ -222,7 +222,7 @@ class Barang extends CI_Controller {
 		$where = array('id_barang' => $id );
 		$foto = $this->barang_model->ambilFoto($where);
 		if($foto){
-			if($foto == 'box.png'){
+			if($foto == 'tampil.png'){
 
 			}else{
 				unlink('./assets/upload/barang/'.$foto.'');
