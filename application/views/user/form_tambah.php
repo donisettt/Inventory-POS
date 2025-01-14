@@ -62,7 +62,7 @@
                                     <option value="">--Pilih--</option>
                                     <option value="admin">Admin</option>
                                     <option value="manajer">Manajer</option>
-                                    <option value="gudang">Staf</option>
+                                    <option value="gudang">Staf Gudang</option>
                                 </select>
                             </div>
 

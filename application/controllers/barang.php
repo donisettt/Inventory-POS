@@ -12,6 +12,7 @@ class Barang extends CI_Controller {
 	$this->load->model('barang_model');
 	$this->load->model('jenis_model');
 	$this->load->model('satuan_model');
+	$this->load->model('kategori_model');
   }
 	
 	public function index()
@@ -24,14 +25,14 @@ class Barang extends CI_Controller {
 		$this->load->view('templates/footer');
     }
 
-	public function laporan()
-	{
-		$data['title'] = 'Laporan Stok Barang';
+	// public function laporan()
+	// {
+	// 	$data['title'] = 'Laporan Stok Barang';
 
-		$this->load->view('templates/header', $data);
-		$this->load->view('errors/maintenance');
-		$this->load->view('templates/footer');
-	}
+	// 	$this->load->view('templates/header', $data);
+	// 	$this->load->view('errors/maintenance');
+	// 	$this->load->view('templates/footer');
+	// }
 
     public function tambah()
 	{
@@ -40,10 +41,12 @@ class Barang extends CI_Controller {
         //data untuk select
 		$data['jenis'] = $this->jenis_model->data()->result();
         $data['satuan'] = $this->satuan_model->data()->result();
+		$data['kategori'] = $this->kategori_model->data()->result();
 
         //jml
 		$data['jmlJenis'] = $this->satuan_model->data()->num_rows();
 		$data['jmlSatuan'] = $this->satuan_model->data()->num_rows();
+		$data['jmlKategori'] = $this->kategori_model->data()->num_rows();
 
 		$this->load->view('templates/header', $data);
 		$this->load->view('barang/form_tambah');
@@ -61,10 +64,12 @@ class Barang extends CI_Controller {
         //data untuk select
 		$data['jenis'] = $this->jenis_model->data()->result();
         $data['satuan'] = $this->satuan_model->data()->result();
+		$data['kategori'] = $this->kategori_model->data()->result();
 
         //jml
 		$data['jmlJenis'] = $this->satuan_model->data()->num_rows();
 		$data['jmlSatuan'] = $this->satuan_model->data()->num_rows();
+		$data['jmlKategori'] = $this->kategori_model->data()->num_rows();
 
 		$this->load->view('templates/header', $data);
 		$this->load->view('barang/form_ubah');
@@ -94,11 +99,13 @@ class Barang extends CI_Controller {
 
         $this->load->library('upload', $config);
         
-		$kode = 	$this->barang_model->buat_kode();
+		$kode = $this->barang_model->buat_kode();
 		$barang = $this->input->post('barang');
-		$stok = 	$this->input->post('stok');
-		$jenis = 	$this->input->post('jenis');
-        $satuan = 	$this->input->post('satuan');
+		$stok = $this->input->post('stok');
+		$jenis = $this->input->post('jenis');
+        $satuan = $this->input->post('satuan');
+		$kategori = $this->input->post('kategori');
+		$expired = $this->input->post('expired');
 		$harga_beli = $this->input->post('harga_beli');
 		$harga_jual = $this->input->post('harga_jual');
         
@@ -126,7 +133,9 @@ class Barang extends CI_Controller {
 			'stok'=> $stok,
 			'id_jenis'=> $jenis,
             'id_satuan'=> $satuan,
+			'id_kategori' => $kategori,
             'foto' => $ganti,
+			'expired' =>$expired,
 			'harga_beli' => $harga_beli,
 			'harga_jual' => $harga_jual
 		);
@@ -156,11 +165,13 @@ class Barang extends CI_Controller {
 
         $this->load->library('upload', $config);
         
-		$kode =    $this->input->post('idbarang');
-		$barang =  $this->input->post('barang');
-		$stok = 	$this->input->post('stok');
-		$jenis = 	$this->input->post('jenis');
-        $satuan = 	$this->input->post('satuan');
+		$kode = $this->input->post('idbarang');
+		$barang = $this->input->post('barang');
+		$stok = $this->input->post('stok');
+		$jenis = $this->input->post('jenis');
+        $satuan = $this->input->post('satuan');
+		$kategori = $this->input->post('kategori');
+		$expired = $this->input->post('expired');
 		$harga_beli = $this->input->post('harga_beli');
 		$harga_jual = $this->input->post('harga_jual');
         
@@ -193,7 +204,9 @@ class Barang extends CI_Controller {
 			'stok'=> $stok,
 			'id_jenis'=> $jenis,
             'id_satuan'=> $satuan,
+			'id_kategori' => $kategori,
             'foto' => $ganti,
+			'expired' => $expired,
 			'harga_beli' => $harga_beli,
 			'harga_jual' => $harga_jual
 		);

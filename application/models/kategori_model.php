@@ -1,28 +1,16 @@
 <?php
-class user_model extends ci_model{
+class kategori_model extends ci_model{
 
 
     function data()
     {
-        $this->db->order_by('id_user','DESC');
-        return $query = $this->db->get('user');
-    }
-
-    public function ambilFoto($where)
-    {
-      $this->db->order_by('id_user','DESC');
-      $this->db->limit(1);
-      $query = $this->db->get_where('user', $where);   
-      
-      $data = $query->row();
-      $foto= $data->foto;
-      
-      return $foto;
+        $this->db->order_by('id_kategori','DESC');
+        return $query = $this->db->get('kategori');
     }
 
 
     public function ambilId($table, $where)
-   {
+    {
        return $this->db->get_where($table, $where);
     }
 
@@ -57,10 +45,10 @@ class user_model extends ci_model{
 
 
     public function buat_kode()   {
-		  $this->db->select('RIGHT(user.id_user,3) as kode', FALSE);
-		  $this->db->order_by('id_user','DESC');
+		  $this->db->select('RIGHT(satuan.id_satuan,4) as kode', FALSE);
+		  $this->db->order_by('id_satuan','DESC');
 		  $this->db->limit(1);
-		  $query = $this->db->get('user');      //cek dulu apakah ada sudah ada kode di tabel.
+		  $query = $this->db->get('satuan');      //cek dulu apakah ada sudah ada kode di tabel.
 		  if($query->num_rows() <> 0){
 		   //jika kode ternyata sudah ada.
 		   $data = $query->row();
@@ -70,13 +58,9 @@ class user_model extends ci_model{
 		   //jika kode belum ada
 		   $kode = 1;
 		  }
-		  $kodemax = str_pad($kode, 3, "0", STR_PAD_LEFT); // angka 4 menunjukkan jumlah digit angka 0
-		  $kodejadi = "MDN-USR-".$kodemax;    // hasilnya ODJ-0001 dst.
+		  $kodemax = str_pad($kode, 4, "0", STR_PAD_LEFT); // angka 4 menunjukkan jumlah digit angka 0
+		  $kodejadi = "STN-".$kodemax;    
 		  return $kodejadi;
 	}
-
-
-
-
 
 }

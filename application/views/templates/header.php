@@ -102,6 +102,12 @@ if (!$this->session->has_userdata('login_session')) {
                             <?php endif; ?>
                         <?php endif; ?>
 
+                        <?php if ($this->session->userdata('login_session')['level'] == 'admin' || $this->session->userdata('login_session')['level'] == 'manajer'): ?>
+                            <a class="collapse-item <?php if($title == 'Log Activity') echo 'active'; ?>" >
+                            <b>Log Activity</b>
+                            <span style="color: red; font-size: 0.8em; font-weight: normal;"> (Coming Soon)</span>
+                        <?php endif; ?>
+
                         <?php if($this->session->userdata('login_session')['level'] == 'admin' || $this->session->userdata('login_session')['level'] == 'gudang'): ?>
                             <?php if($title == 'Supplier'): ?>
                                 <a class="collapse-item active" href="<?= base_url() ?>supplier"><b>Supplier</b></a>
@@ -137,6 +143,7 @@ if (!$this->session->has_userdata('login_session')) {
                         <?php if($this->session->userdata('login_session')['level'] == 'admin'): ?>
                             <a class="collapse-item <?php if($title == 'Satuan Barang') echo 'active'; ?>" href="<?= base_url() ?>satuan"><b>Satuan Barang</b></a>
                             <a class="collapse-item <?php if($title == 'Jenis Barang') echo 'active'; ?>" href="<?= base_url() ?>jenis"><b>Jenis Barang</b></a>
+                            <a class="collapse-item <?php if($title == 'Kategori Barang') echo 'active'; ?>" href="<?= base_url() ?>kategori"><b>Kategori Barang</b></a>
                         <?php endif; ?>
                         <a class="collapse-item <?php if($title == 'Barang') echo 'active'; ?>" href="<?= base_url() ?>barang"><b>Data Barang</b></a>
                     </div>
@@ -198,7 +205,10 @@ if (!$this->session->has_userdata('login_session')) {
                         <h6 class="collapse-header">Laporan</h6>
                         <a class="collapse-item <?php if($title == 'Laporan Barang Masuk') echo 'active'; ?>" href="<?= base_url() ?>lap_barang_masuk"><b>Barang Masuk</b></a>
                         <a class="collapse-item <?php if($title == 'Laporan Barang Keluar') echo 'active'; ?>" href="<?= base_url() ?>lap_barang_keluar"><b>Barang Keluar</b></a>
-                        <a class="collapse-item <?php if($title == 'Laporan Stok Barang') echo 'active'; ?>" href="<?= base_url() ?>lap_stok"><b>Stok Barang</b></a>
+                        <a class="collapse-item <?php if($title == 'Laporan Stok Barang') echo 'active'; ?>" href="<?= base_url() ?>lap_stok">
+                        <b>Stok Barang</b>
+                        <span style="color: red; font-size: 0.8em; font-weight: normal;"> (Coming Soon)</span>
+                    </a>
                     </div>
                 </div>
             </li>
@@ -263,20 +273,51 @@ if (!$this->session->has_userdata('login_session')) {
 
                         <!-- Wrapper untuk kontainer topbar dengan flexbox -->
                         <div class="d-flex justify-content-between align-items-center w-100">
+
                             <!-- Tanggal dan Hari -->
                             <?php
+                            date_default_timezone_set('Asia/Jakarta');
                             // Set locale ke bahasa Indonesia
                             setlocale(LC_TIME, 'id_ID', 'id_ID.UTF-8');
 
                             // Menampilkan tanggal dalam format Indonesia
-                            $tanggalHari = strftime('%A, %e %B %Y'); // Format: Hari, Tanggal Bulan Tahun
+                            $tanggalHari = strftime('%A, %d %B %Y %H:%M:%S'); // Format: Hari, Tanggal Bulan Tahun Jam:Menit:Detik
                             ?>
 
                             <li class="nav-item mx-auto">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="tanggalHari">
-                                    <?= $tanggalHari ?> <!-- Format hari, tanggal bulan tahun dalam bahasa Indonesia -->
+                                    <?= $tanggalHari ?> <!-- Format: Hari, Tanggal Bulan Tahun Jam:Menit:Detik -->
                                 </span>
                             </li>
+
+                            <script>
+                                function updateTime() {
+                                    const currentTime = new Date();
+                                    const options = {
+                                        weekday: 'long', // Nama hari
+                                        year: 'numeric',
+                                        month: 'long',
+                                        day: 'numeric',
+                                        hour: '2-digit',
+                                        minute: '2-digit',
+                                        second: '2-digit',
+                                        hour12: false, // 24 jam
+                                    };
+                                    // Format waktu sesuai dengan bahasa Indonesia
+                                    const formattedTime = currentTime.toLocaleString('id-ID', options);
+
+                                    // Update elemen dengan ID "tanggalHari"
+                                    document.getElementById('tanggalHari').innerHTML = formattedTime;
+                                }
+
+                                // Update waktu setiap detik
+                                setInterval(updateTime, 1000);
+
+                                // Jalankan fungsi updateTime untuk pertama kali
+                                updateTime();
+                            </script>
+
+                            <!-- Akhir tanggal dan hari -->
 
                             <div class="topbar-divider d-none d-sm-block"></div>
 

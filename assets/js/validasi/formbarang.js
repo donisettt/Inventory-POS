@@ -3,6 +3,9 @@ function validateForm() {
     var stok = document.forms["myForm"]["stok"].value;
     var jenis = document.forms["myForm"]["jenis"].value;
     var satuan = document.forms["myForm"]["satuan"].value;
+    var harga_beli = document.forms["myForm"]["harga_beli"].value;
+    var harga_jual = document.forms["myForm"]["harga_jual"].value;
+    var expired = document.forms["myForm"]["expired"].value;
 
     if (barang == "") {
         validasi('Nama Barang tidak boleh kosong!', 'warning');
@@ -15,6 +18,15 @@ function validateForm() {
         return false;
     } else if (satuan == '') {
         validasi('Satuan Barang tidak boleh kosong!', 'warning');
+        return false;
+    } else if (harga_beli == '') {
+        validasi('Harga Beli tidak boleh kosong!', 'warning');
+        return false;
+    } else if (harga_jual == '') {
+        validasi('Harga Jual tidak boleh kosong!', 'warning');
+        return false;
+    } else if (expired == '') {
+        validasi('Expired tidak boleh kosong!', 'warning');
         return false;
     }
 

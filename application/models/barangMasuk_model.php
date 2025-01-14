@@ -14,6 +14,7 @@ class barangMasuk_model extends ci_model{
       $this->db->from('barang_masuk as bm');
       $this->db->join('barang as b', 'b.id_barang = bm.id_barang');
       $this->db->join('supplier as s', 's.id_supplier = bm.id_supplier');
+      $this->db->join('user as u', 'u.id_user = bm.id_user');
 
       $this->db->order_by('bm.id_barang_masuk','DESC');
       return $query = $this->db->get();
@@ -74,6 +75,7 @@ class barangMasuk_model extends ci_model{
       $this->db->from('barang_masuk as bm');
       $this->db->join('barang as b', 'b.id_barang = bm.id_barang');
       $this->db->join('supplier as s', 's.id_supplier = bm.id_supplier');
+      $this->db->join('user as u', 'u.id_user = bm.id_user');
       $this->db->where('bm.id_barang_masuk',$where);
       $this->db->order_by('bm.id_barang_masuk','DESC');
       return $query = $this->db->get();

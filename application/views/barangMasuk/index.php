@@ -66,7 +66,7 @@ function tgl_indo($tanggal){
                                 <td><?= tgl_indo($bm->tgl_masuk) ?></td>
                                 <td><?= $bm->nama_supplier ?></td>
                                 <td><span class="badge badge-success"><?= $bm->jumlah_masuk ?></span></td>
-                                <td><?= $bm->id_user ?></td>
+                                <td><?= $bm->nama ?></td>
                                 <td>
                                     <center>
                                         <a href="<?= base_url() ?>barangMasuk/ubah/<?= $bm->id_barang_masuk ?>"

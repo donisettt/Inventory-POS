@@ -15,6 +15,7 @@ $route['supplier'] = 'Supplier/index';
 $route['customer'] = 'Customer/index';
 $route['jenis'] = 'Jenis/index';
 $route['satuan'] = 'Satuan/index';
+$route['kategori'] = 'Kategori/index';
 $route['barang'] = 'Barang/index';
 $route['barang_masuk'] = 'barangMasuk/index';
 $route['barang_keluar'] = 'barangKeluar/index';

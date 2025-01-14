@@ -13,6 +13,7 @@ class barang_model extends ci_model{
       $this->db->from('barang as b');
       $this->db->join('jenis as j', 'j.id_jenis = b.id_jenis');
       $this->db->join('satuan as s', 's.id_satuan = b.id_satuan');
+      $this->db->join('kategori as k', 'k.id_kategori = b.id_kategori');
 
       $this->db->order_by('b.id_barang','DESC');
       return $query = $this->db->get();
@@ -35,6 +36,7 @@ class barang_model extends ci_model{
       $this->db->where('b.id_barang', $where);
       $this->db->join('jenis as j', 'j.id_jenis = b.id_jenis');
       $this->db->join('satuan as s', 's.id_satuan = b.id_satuan');
+      $this->db->join('kategori as k', 'k.id_kategori = b.id_kategori');
 
       $this->db->order_by('b.id_barang','DESC');
       return $query = $this->db->get();

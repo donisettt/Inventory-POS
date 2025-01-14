@@ -29,8 +29,10 @@
                                 <th>Foto</th>
                                 <th>Nama Barang</th>
                                 <th>Jenis Barang</th>
-                                <th>Stok</th>
                                 <th>Satuan</th>
+                                <th>Kategori</th>
+                                <th>Stok</th>
+                                <th>Expired</th>
                                 <th>Harga Beli</th>
                                 <th>Harga Jual</th>
                                 <?php if($this->session->userdata('login_session')['level'] == 'admin' || $this->session->userdata('login_session')['level'] == 'gudang') : ?>
@@ -47,6 +49,8 @@
                                         src="assets/upload/barang/<?= $b->foto ?>" alt="" width="75px"></td>
                                 <td onclick="detail('<?= $b->id_barang ?>')"><?= $b->nama_barang ?></td>
                                 <td onclick="detail('<?= $b->id_barang ?>')"><?= $b->nama_jenis ?></td>
+                                <td onclick="detail('<?= $b->id_barang ?>')"><?= $b->nama_satuan ?></td>
+                                <td onclick="detail('<?= $b->id_barang ?>')"><?= $b->nama_kategori ?></td>
                                 <td onclick="detail('<?= $b->id_barang ?>')">
                                     <?php
                                     $data = $this->db->select_sum('jumlah_masuk')->from('barang_masuk')->where('id_barang', $b->id_barang)->get();
@@ -70,7 +74,7 @@
                                         <?= $hasil ?>
                                     </span>
                                 </td>
-                                <td onclick="detail('<?= $b->id_barang ?>')"><?= $b->nama_satuan ?></td>
+                                <td onclick="detail('<?= $b->id_barang ?>')"><?= $b->expired ?></td>
                                 <td onclick="detail('<?= $b->id_barang ?>')"><?= $b->harga_beli ?></td>
                                 <td onclick="detail('<?= $b->id_barang ?>')"><?= $b->harga_jual ?></td>
                                 <?php if($this->session->userdata('login_session')['level'] == 'admin' || $this->session->userdata('login_session')['level'] == 'gudang') : ?>

@@ -63,6 +63,11 @@
                                 <input class="form-control" name="harga_jual" type="number" value="<?= $d->harga_jual ?>">
                             </div>
 
+                            <!-- Expired -->
+                            <div class="form-group"><label>Expired</label>
+                                <input class="form-control" name="expired" type="date" value="<?= $d->expired ?>">
+                            </div>
+
                             <!-- Jenis -->
                             <?php if($jmlJenis > 0): ?>
                             <div class="form-group"><label>Jenis Barang</label>
@@ -113,6 +118,34 @@
                                 <div class="d-sm-flex justify-content-between">
                                     <span class="text-danger"><i>(Belum Ada Data Satuan!)</i></span>
                                     <a href="<?= base_url() ?>satuan" class="btn btn-sm btn-primary btn-icon-split">
+                                        <span class="icon text-white">
+                                            <i class="fas fa-plus"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <?php endif; ?>
+
+                            <!-- Kategori -->
+                            <?php if($jmlKategori > 0): ?>
+                            <div class="form-group"><label>Kategori Barang</label>
+                                <select name="kategori" class="form-control chosen">
+                                    <?php foreach($kategori as $k): ?>
+
+                                    <?php if($k->id_kategori == $k->id_kategori): ?>
+                                    <option value="<?= $k->id_kategori ?>"><?= $k->nama_kategori ?></option>
+                                    <?php else: ?>
+                                    <option value="<?= $k->id_kategori ?>"><?= $k->nama_kategori ?></option>
+                                    <?php endif; ?>
+                                    <?php endforeach ?>
+                                </select>
+                            </div>
+                            <?php else: ?>
+                            <div class="form-group"><label>Kategori Barang</label>
+                                <input type="hidden" name="kategori">
+                                <div class="d-sm-flex justify-content-between">
+                                    <span class="text-danger"><i>(Belum Ada Data Satuan!)</i></span>
+                                    <a href="<?= base_url() ?>kategori" class="btn btn-sm btn-primary btn-icon-split">
                                         <span class="icon text-white">
                                             <i class="fas fa-plus"></i>
                                         </span>
